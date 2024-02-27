@@ -4,31 +4,31 @@
 //лучше обойтись исключительно массивами.
 
 string [] CreateArray(int size)
-{
+{  
     string [] array = new string[size];
+    Console.WriteLine("Введите строки через Enter");
     for (int i=0; i<array.Length; i++)
-    {
-        array[i] = Console.ReadLine();    
+    {        
+        array[i] = Console.ReadLine();       
     }
     return array;
 }
-Console.WriteLine("Введите количество  ");
+
+Console.WriteLine("Введите количество строк");
 int n = Convert.ToInt32(Console.ReadLine());
 string [] array = CreateArray(n);
 Console.WriteLine($"Исходный массив: [{string.Join("; ", array)}]");
 
-///* 
 string [] NewArray(string [] original_array)
 {
-   //string [] new_array = new string[original_array.Length];
-   int count=0;  
+int count=0;  
    for (int i=0; i<original_array.Length; i++)
    {    
     if (original_array[i].Length<4)
     {
         count++;
     }
-   }
+   }  
 string [] new_array = new string[count];
 int j=0;
 for (int i=0; i<original_array.Length; i++)
@@ -41,5 +41,5 @@ for (int i=0; i<original_array.Length; i++)
    }
    return new_array;
 }
-string [] new_array=NewArray(array);
+string [] new_array =NewArray(array);
 Console.WriteLine($"Модифицированный массив: [{string.Join("; ", new_array)}]");
